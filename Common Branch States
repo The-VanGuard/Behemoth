@@ -1,0 +1,16 @@
+    i = 0
+    while True:
+        choice = input()
+        if(choice.isalpha()):
+            if(choice.lower() == 'y'):
+                FUNCTION()
+            elif (choice.lower() == 'n'):
+                print('')
+                FUNCTION()
+            else:
+                print('You would make a poor follower. Choose Wisely')
+                i += 1
+        if(i>3):
+            print('You are worthless. Begone!!!')
+            sleep(3.0)
+            exit()
