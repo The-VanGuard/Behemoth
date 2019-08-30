@@ -47,8 +47,9 @@ def Bushes():
             sleep(2.0)
             Meeting()
         elif (choice.lower() == 'n'):
-            print('You walk back to camp and find yourself confronted with a blade to your eye')
-            Death()
+            print('Afraid of any games on the part of shapeshifting Fae, you move back six paces and turn around only to find a surprise.')
+            sleep(2.0)
+            Meeting2()
         else:
             print('You would make a poor follower. Choose Wisely')
             i += 1
@@ -79,7 +80,7 @@ def Meeting():
                 sleep(2.0)
                 print('Ignoring the pain with hard earned familiarity, blinking your eyes brings the clearing into focus and you promptly freeze.')
                 sleep(3.0)
-                print('Standing beside the inhuman fae is a creature spoken of in hushed voices in quiet corners for fear of summoning it. A member of the Headless Hunt as depicted in the books')
+                print('Standing beside the inhuman fae is a creature spoken of in hushed voices. A member of the Headless Hunt as depicted in the stories sung by mothers for children to behave')
                 sleep(4.0)
                 exit()
             elif(choice.lower() == 'n'):
@@ -96,6 +97,11 @@ def Meeting():
             sleep(3.0)
             exit()
 
+
+def Meeting2():
+    print('Lips of crimson blood and skin fairer than snow brings you to a screeching halt yet before you can make a decision or even react to certain buried instincts of the psyche, crimson lips wrap around the dry flesh of your neck and darkness cloaks your vision')
+    sleep(4.0)
+    exit()
 
 
 print('Greetings adventurer\n')
