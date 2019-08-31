@@ -1,11 +1,12 @@
 from time import sleep
+from calendar   import leapdays
 
 #global variable for two-way branching in all current scenarios
 global choice
 
 #Initiated when choice results in Character Death
 def Death():
-    print('You have met the fate of many foolish souls wandering into the depths of Magnolia')
+    print('You have met the fate of those foolish enough to follow the rules of the outside realm within the depths of Magnolia.')
     sleep(3.0)
     exit()
 
