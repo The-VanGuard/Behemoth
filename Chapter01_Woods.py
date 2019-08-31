@@ -1,8 +1,13 @@
+from subprocess import Popen
 from time import sleep
-from calendar   import leapdays
 
 #global variable for two-way branching in all current scenarios
 global choice
+
+#Function to run the next chapter based on player choice
+def run(runfile):
+  with open(runfile,"r") as rnf:
+    exec(rnf.read())
 
 #Initiated when choice results in Character Death
 def Death():
@@ -16,11 +21,11 @@ def Death():
 
 #The Beginning of the player journey in Magnolia
 def TheWoods():
-    print('The Woods of Magnolia are far too silent.')
+    print('The Woods of Magnolia are eerie in their utter silence. Even the wind appears terrified of attracting danger.\n')
     sleep(2.0)
-    print('As the sole inhabitant of your camp, you remain vigilant, terrified against the creatures of the dark yet unwilling to turn your back on your self imposed quest')
+    print('As the sole inhabitant of your camp, you remain vigilant, terrified against the creatures of the dark yet unwilling to turn your back on your self imposed quest.\n')
     sleep(3.0)
-    print('A noise erupts from the bushes nearby. DO you investigate the disturbance?')
+    print('A noise erupts from the bushes nearby. DO you investigate the disturbance?\nY/N?')
     i = 0
     while True:
         choice = input()
@@ -79,7 +84,7 @@ def Bushes():
 def Meeting():
     print('You freeze at the wondrous sight greeting your tired, fearful eyes.\n')
     sleep(2.0)
-    print('The small campfire you built to ward around wild animals wraps around the woman like a living cloak.\n')
+    print('The small campfire you built to ward off the wild wraps around the woman like a living cloak.\n')
     sleep(2.0)
     print("Yet it is the inhumanity of the woman's beauty that brings the situation into focus.\n")
     sleep(2.0)
@@ -94,15 +99,15 @@ def Meeting():
             if(choice.lower() == 'y'):
                 print('You move swiftly to harm this creature before your soul is lost.\n')
                 sleep(2.0)
-                print('The knife is a hairs breadth from her bosom when a tempestual squall carries you into the nearest tree\n')
+                print('The knife is a hairs breadth from her bosom when a tempestual squall carries you into the nearest tree.\n')
                 sleep(3.0)
                 print('Your ribs and legs feel like mush and you can feel your heart threaten to break out of its cage of bones.\n')
                 sleep(2.0)
                 print('Ignoring the pain with hard earned familiarity, blinking your eyes brings the clearing into focus and you promptly freeze.\n')
                 sleep(3.0)
-                print('Standing beside the inhuman fae is a creature spoken of in hushed voices. A member of the Headless Hunt as depicted in the stories sung by mothers for children to behave\n')
-                sleep(4.0)
-                exit()
+                print('Standing beside the inhuman fae is a creature spoken of in hushed voices. A member of the Headless Hunt as depicted in the stories sung by mothers for children to behave.\n')
+                #Function call to move onto Chapter02_Headless due to current chosen course.
+                run('Chapter02_Headless.py')
             elif(choice.lower() == 'n'):
                 print('Driven by your never ceasing curiosity, you are about to ask her name when you remember this is the land of Fae and names hold power.\n')
                 sleep(3.0)
@@ -110,7 +115,7 @@ def Meeting():
                 sleep(3.0)
                 print('Terrified of the very real capriciousness of your guest, you stand your ground with the hope of driving her away with silence.\n')
                 sleep(2.0)
-                print('Your hopes are dashed when the creature appears before right before your eyes without a whisper of movement and a flash of light brightens your peripherals.\n')
+                print('Your hopes are dashed when the creature appears before right before your eyes without a whisper of movement and a flash of light fills your entire world for a long time after.\n')
             else:
                 print('You would make a poor follower. Choose Wisely\n')
                 i += 1
@@ -138,13 +143,15 @@ while True:
         if (begin.lower() == 'y'):
             TheWoods()
         elif(begin.lower() == 'n'):
-            print('Sane of you for not braving the foolishness of this wretched world\nFarewell Adventurer.\n Until we meet again\n\n')
-            sleep(3.0)
+            print('Your sanity remains unchanged.', end='')
+            sleep(2.0)
+            print('........For now')
+            sleep(2.0)
             exit()
         else:
             print('You would make a poor follower\n\n')
             i += 1
         if(i>3):
-            print('You are worthless. Begone!!!')
+            print('Four chances and you have chosen poorly. Begone from this realm.\n')
+            sleep(3.0)
             exit()
-
