@@ -1,14 +1,15 @@
 from time import sleep
 
+#global variable for two-way branching in all current scenarios
 global choice
-#global hp
-#global mana
 
+#Initiated when choice results in Character Death
 def Death():
     print('You have met the fate of many foolish souls wandering into the depths of Magnolia')
     sleep(3.0)
     exit()
 
+#The Beginning of the player journey in Magnolia
 def TheWoods():
     print('The Woods of Magnolia are far too silent.')
     sleep(2.0)
@@ -33,6 +34,7 @@ def TheWoods():
             exit()
 
 
+#If Player chooses to investigate the bushes in TheWoods()
 def Bushes():
     print('Grabbing your courage, you part the bushes with a quick hand. A clearly startled fox runs away, a book on the damp ground where it once was.')
     sleep(3.0)
@@ -62,6 +64,8 @@ def Bushes():
             sleep(3.0)
             exit()
 
+
+#If player picks up knife in Bushes()
 def Meeting():
     print('You freeze at the wondrous sight greeting your tired, fearful eyes.')
     sleep(2.0)
@@ -104,12 +108,13 @@ def Meeting():
             exit()
 
 
+#If player does not pick up knife in Bushes()
 def Meeting2():
     print('Lips of crimson blood and skin fairer than snow brings you to a screeching halt yet before you can make a decision or even react to certain buried instincts of the psyche, crimson lips wrap around the dry flesh of your neck and darkness cloaks your vision')
     sleep(4.0)
     exit()
 
-
+#Starts the game
 print('Greetings adventurer\n')
 sleep(5.0)
 print('Do you dare to venture into the nightmare realm of the Fae?')
