@@ -126,7 +126,7 @@ def Meeting2():
     sleep(4.0)
     exit()
 
-#Starts the game
+#Starts the game 'Behemoth'
 print('Greetings adventurer\n')
 sleep(3.0)
 print('Do you dare to venture into the nightmare realm of the Fae?')
