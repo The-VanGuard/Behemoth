@@ -1,5 +1,5 @@
 # Behemoth
-##Text Based Fantasy Game
+## Text Based Fantasy Game
 
 This is my attempt to combine two of my passions : Programming and Writing; in an attempt to recreate the effect of the 'Bandersnatch' movie available on Netflix. (Check it out. Execution needed work but damn was it worth the wait)
 My primary reason, on the other hand, is to create the largest logic flow and decision tree branch I possibly can to truly build an RPG where your choices drive your story.
