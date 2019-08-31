@@ -10,10 +10,10 @@ My current common function for branching choices
                 print('')
                 FUNCTION()
             else:
-                print('You would make a poor follower. Choose Wisely')
+                print('You would make a poor follower. Choose Wisely\nY/N?')
                 i += 1
         if(i>3):
-            print('You are worthless. Begone!!!')
+            print('Four chances and you have chosen poorly. Begone from this realm\n')
             sleep(3.0)
             exit()
-######
+#####
