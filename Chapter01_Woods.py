@@ -1,13 +1,15 @@
-from subprocess import Popen
 from time import sleep
+#import subprocess
+import Chapter02_Headless
 
 #global variable for two-way branching in all current scenarios
 global choice
 
-#Function to run the next chapter based on player choice
-def run(runfile):
-  with open(runfile,"r") as rnf:
-    exec(rnf.read())
+
+# Function to run the next chapter based on player choice
+# def run():
+#     with open("Chapter02_Headless.py","r") as rnf:
+#         exec(rnf.read())
 
 #Initiated when choice results in Character Death
 def Death():
@@ -29,10 +31,10 @@ def TheWoods():
     i = 0
     while True:
         choice = input()
-        if(choice.isalpha()):
-            if(choice.lower() == 'y'):
+        if choice.isalpha():
+            if choice.lower() == 'y':
                 Bushes()
-            elif (choice.lower() == 'n'):
+            elif choice.lower() == 'n':
                 print('A pain flashes across your throat. You sway forward as a crimson liquid spills from your chest.\n')
                 sleep(3.0)
                 print('A pain erupts in your throat, panic overtaking your thoughts as you realize you are dying.\n')
@@ -58,7 +60,7 @@ def Bushes():
     while True:
         choice = input()
         if (choice.lower() == 'y'):
-            print('Investigation reveals the book to be a journal with plenty of missing pages and quite a few smudged with a fluid you dare not contemplate.\n')
+            print('\nInvestigation reveals the book to be a journal with plenty of missing pages and quite a few smudged with a fluid you dare not contemplate.\n')
             sleep(3.0)
             print('A mere moment before the thought of throwing the book occurs to you, the last page is flipped and you find a curiosity.\n')
             sleep(2.0)
@@ -95,8 +97,8 @@ def Meeting():
     i = 0
     while True:
         choice = input()
-        if(choice.isalpha()):
-            if(choice.lower() == 'y'):
+        if choice.isalpha():
+            if choice.lower() == 'y':
                 print('You move swiftly to harm this creature before your soul is lost.\n')
                 sleep(2.0)
                 print('The knife is a hairs breadth from her bosom when a tempestual squall carries you into the nearest tree.\n')
@@ -107,8 +109,8 @@ def Meeting():
                 sleep(3.0)
                 print('Standing beside the inhuman fae is a creature spoken of in hushed voices. A member of the Headless Hunt as depicted in the stories sung by mothers for children to behave.\n')
                 #Function call to move onto Chapter02_Headless due to current chosen course.
-                run('Chapter02_Headless.py')
-            elif(choice.lower() == 'n'):
+                #subprocess.call('python Chapter02_Headless.py', shell=True)
+            elif choice.lower() == 'n':
                 print('Driven by your never ceasing curiosity, you are about to ask her name when you remember this is the land of Fae and names hold power.\n')
                 sleep(3.0)
                 print('Terrible power, espeically in the hands of these capricious creatures\n')
@@ -133,16 +135,16 @@ def Meeting2():
 
 #Starts the game 'Behemoth'
 print('Greetings adventurer\n')
-sleep(3.0)
+#Chapter02_Headless.Head()
 print('Do you dare to venture into the nightmare realm of the Fae?')
 print('Y/N')
 i = 0
 while True:
     begin = input()
     if (begin.isalpha()):
-        if (begin.lower() == 'y'):
+        if begin.lower() == 'y':
             TheWoods()
-        elif(begin.lower() == 'n'):
+        elif begin.lower() == 'n':
             print('Your sanity remains unchanged.', end='')
             sleep(2.0)
             print('........For now')
